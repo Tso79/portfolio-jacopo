@@ -574,82 +574,42 @@
                 </div>
             </div>
 
-            <div class="contact-form-container">
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nome *</label>
-                        <input type="text" id="name" name="name" required>
+            <div class="contact-cta">
+                <div class="cta-card">
+                    <div class="cta-icon">
+                        <i class="fas fa-comments"></i>
                     </div>
+                    <h4>Hai un progetto in mente?</h4>
+                    <p>Scrivimi direttamente e ne parliamo insieme. Rispondo sempre entro 24 ore!</p>
+                    <a href="mailto:jacopo@example.com" class="cta-button primary">
+                        <span>Invia una Mail</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                <div class="cta-card">
+                    <div class="cta-icon">
+                        <i class="fab fa-whatsapp"></i>
                     </div>
+                    <h4>Preferisci WhatsApp?</h4>
+                    <p>Scrivimi su WhatsApp per una chat veloce e informale.</p>
+                    <a href="https://wa.me/393123456789" class="cta-button secondary" target="_blank">
+                        <span>Scrivimi su WhatsApp</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
 
-                    <div class="form-group">
-                        <label for="company">Azienda</label>
-                        <input type="text" id="company" name="company">
+                <div class="cta-card">
+                    <div class="cta-icon">
+                        <i class="fas fa-calendar"></i>
                     </div>
-
-                    <div class="form-group">
-                        <label for="service">Servizio di interesse</label>
-                        <select id="service" name="service">
-                            <option value="">Seleziona un servizio</option>
-                            <option value="marketing">Marketing Strategy</option>
-                            <option value="social">Social Media Management</option>
-                            <option value="content">Content Creation</option>
-                            <option value="music">Music Production</option>
-                            <option value="branding">Brand Identity</option>
-                            <option value="other">Altro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="budget">Budget indicativo</label>
-                        <select id="budget" name="budget">
-                            <option value="">Seleziona un range</option>
-                            <option value="1000-5000">€1.000 - €5.000</option>
-                            <option value="5000-10000">€5.000 - €10.000</option>
-                            <option value="10000-25000">€10.000 - €25.000</option>
-                            <option value="25000+">€25.000+</option>
-                            <option value="discuss">Da discutere</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Messaggio *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Raccontami del tuo progetto..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="privacy" required>
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text">
-                                Accetto la <a href="/privacy" target="_blank">Privacy Policy</a> e
-                                i <a href="/terms" target="_blank">Termini di Servizio</a> *
-                            </span>
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="newsletter">
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text">
-                                Voglio ricevere aggiornamenti sui nuovi progetti e le uscite musicali
-                            </span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <span class="btn-text">Invia Messaggio</span>
-                        <i class="fas fa-paper-plane"></i>
-                        <div class="btn-loading">
-                            <i class="fas fa-spinner fa-spin"></i>
-                        </div>
-                    </button>
-                </form>
+                    <h4>Prenota una Call</h4>
+                    <p>Parliamo del tuo progetto in una call di 30 minuti, completamente gratuita.</p>
+                    <a href="#" class="cta-button tertiary" onclick="alert('Funzionalità di prenotazione in arrivo!')">
+                        <span>Prenota Call Gratuita</span>
+                        <i class="fas fa-video"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -771,37 +731,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form handling
-    const contactForm = document.getElementById('contact-form');
+    // Contact CTA interactions
+    const ctaButtons = document.querySelectorAll('.cta-button');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const submitBtn = this.querySelector('.submit-btn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'block';
-            submitBtn.disabled = true;
-
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Reset button state
-                btnText.style.display = 'block';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-
-                // Show success message
-                alert('Messaggio inviato con successo! Ti risponderò al più presto.');
-
-                // Reset form
-                this.reset();
-            }, 2000);
+    ctaButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
         });
-    }
+
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 
     // Project modal function (to be called from project buttons)
     window.openProjectModal = function(projectId) {
@@ -843,6 +784,123 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<style>
+/* Contact CTA Cards */
+.contact-cta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cta-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cta-card h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background: linear-gradient(135deg, #5855f7, #7c3aed);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.cta-button.secondary {
+    background: #25D366;
+    color: white;
+}
+
+.cta-button.secondary:hover {
+    background: #22C55E;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.cta-button.tertiary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cta-button.tertiary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .contact-cta {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta-card {
+        padding: 1.5rem;
+    }
+
+    .cta-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}
+</style>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
-<footer class="footer">
+<footer class="footer" id="footer">
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-main">
             <!-- Brand Section -->
             <div class="footer-brand">
                 <div class="footer-logo">
@@ -11,38 +11,440 @@
                     <div class="logo-subtitle">Marketing & Music</div>
                 </div>
                 <p class="footer-description">
-                    Creativo digitale da Alba, trasformo idee in strategie vincenti e melodie in emozioni.
+                    Da Alba al mondo digitale. Creo strategie di marketing che fanno rumore
+                    e produco musica che racconta storie. Due passioni, infinite possibilità.
                 </p>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="https://open.spotify.com/artist/6tLcw37jFP5mIhews4tTSK?si=FnSRBA8cRM2XhGjStBibLA" class="social-btn spotify" target="_blank" rel="noopener">
+                        <i class="fab fa-spotify"></i>
+                        <span>Spotify</span>
+                    </a>
+                    <a href="https://instagram.com/jacopo" class="social-btn instagram" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://linkedin.com/in/jacopo" class="social-btn linkedin" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://youtube.com/jacopo" class="social-btn youtube" target="_blank" rel="noopener">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Social Links -->
-            <div class="footer-social">
-                <a href="https://open.spotify.com/artist/6tLcw37jFP5mIhews4tTSK?si=FnSRBA8cRM2XhGjStBibLA" class="social-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-spotify"></i>
-                </a>
-                <a href="https://instagram.com/jacopo" class="social-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://linkedin.com/in/jacopo" class="social-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://youtube.com/jacopo" class="social-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="mailto:jacopo@example.com" class="social-btn">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <div class="newsletter-header">
+                    <h3 class="newsletter-title">Resta Aggiornato</h3>
+                    <p class="newsletter-subtitle">
+                        Ricevi le ultime novità sui miei progetti e le nuove uscite musicali direttamente nella tua inbox.
+                    </p>
+                </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p class="copyright">© 2024 Jacopo. Tutti i diritti riservati.</p>
-                <div class="footer-credits">
-                    <span>Sviluppato con</span>
-                    <i class="fas fa-heart"></i>
-                    <span>e tanta musica</span>
+                <form class="newsletter-form" id="footer-newsletter">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input
+                                type="email"
+                                class="newsletter-input"
+                                placeholder="Il tuo indirizzo email"
+                                required
+                                id="footer-email"
+                            >
+                            <button type="submit" class="newsletter-btn">
+                                <span class="btn-text">Iscriviti</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-privacy">
+                        <label class="privacy-label">
+                            <input type="checkbox" required class="privacy-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="privacy-text">
+                                Accetto di ricevere comunicazioni via email. Puoi disiscriverti in qualsiasi momento.
+                            </span>
+                        </label>
+                    </div>
+                </form>
+
+                <div class="newsletter-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Nuovi progetti</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-music"></i>
+                        <span>Uscite musicali</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Tips & insights</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p class="copyright">© 2024 Jacopo. Tutti i diritti riservati.</p>
+        </div>
     </div>
 </footer>
+
+<style>
+.footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem 0 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-logo {
+    margin-bottom: 1.5rem;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.logo-j {
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-name {
+    color: var(--text-primary);
+}
+
+.logo-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.footer-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.footer-social {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn.spotify:hover {
+    background: #1db954;
+    border-color: #1db954;
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: #e6683c;
+    color: white;
+}
+
+.social-btn.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    color: white;
+}
+
+.social-btn.youtube:hover {
+    background: #ff0000;
+    border-color: #ff0000;
+    color: white;
+}
+
+.footer-newsletter {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-header {
+    margin-bottom: 2rem;
+}
+
+.newsletter-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-subtitle {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.newsletter-form {
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.newsletter-input::placeholder {
+    color: var(--text-muted);
+}
+
+.newsletter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+    background: linear-gradient(135deg, #5855f7, #7c3aed);
+}
+
+.privacy-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.privacy-checkbox {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.privacy-checkbox:checked + .checkmark {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-color: #6366f1;
+}
+
+.privacy-checkbox:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.newsletter-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.benefit-item i {
+    color: #6366f1;
+    font-size: 0.875rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 0 2rem;
+    }
+
+    .footer-social {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-newsletter {
+        padding: 1.5rem;
+    }
+
+    .newsletter-title {
+        font-size: 1.5rem;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .newsletter-btn {
+        justify-content: center;
+    }
+
+    .newsletter-benefits {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-social {
+        grid-template-columns: 1fr;
+    }
+
+    .social-btn {
+        justify-content: center;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter form handling
+    const newsletterForm = document.getElementById('footer-newsletter');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('footer-email').value;
+            const submitBtn = this.querySelector('.newsletter-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+
+            // Show loading state
+            btnText.textContent = 'Iscrizione...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission
+            setTimeout(() => {
+                btnText.textContent = 'Fatto!';
+
+                setTimeout(() => {
+                    btnText.textContent = 'Iscriviti';
+                    submitBtn.disabled = false;
+                    this.reset();
+
+                    // Show success message
+                    alert('Perfetto! Ti terremo aggiornato sui nostri progetti.');
+                }, 1500);
+            }, 1000);
+        });
+    }
+});
+</script>
