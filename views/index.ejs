@@ -352,62 +352,304 @@
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section" id="cta">
+<!-- Portfolio Section -->
+<section class="portfolio-section" id="portfolio">
     <div class="container">
-        <div class="cta-content">
-            <h2 class="cta-title">
+        <div class="section-header">
+            <span class="section-tag">Portfolio Completo</span>
+            <h2 class="section-title">
+                Tutti i Miei <span class="highlight">Progetti</span>
+            </h2>
+        </div>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">Tutti</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="social">Social Media</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <% data.projects.forEach((project, index) => { %>
+                <article class="portfolio-item" data-category="<%= project.category.toLowerCase() %>">
+                    <div class="project-image">
+                        <img src="<%= project.image %>" alt="<%= project.title %>" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3><%= project.title %></h3>
+                                <p><%= project.description %></p>
+                                <button class="view-project-btn" onclick="openProjectModal('<%= project.id %>')">
+                                    Vedi Progetto
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-category"><%= project.category %></span>
+                        <span class="project-year">2024</span>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Chi Sono</span>
+            <h2 class="section-title">
+                La Mia <span class="highlight">Storia</span>
+            </h2>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <div class="about-intro">
+                    <h3>Ciao, sono Jacopo</h3>
+                    <p class="lead">
+                        Un creativo digitale di Alba che vive tra due mondi: il marketing strategico di giorno
+                        e la produzione musicale di notte. La mia missione è dare voce ai brand attraverso
+                        strategie innovative e suoni che emozionano.
+                    </p>
+                </div>
+
+                <div class="about-story">
+                    <h4>Il Mio Percorso</h4>
+                    <p>
+                        Tutto è iniziato con una passione per la comunicazione e un amore profondo per la musica.
+                        Ho scoperto che questi due mondi, apparentemente diversi, condividono un linguaggio comune:
+                        l'abilità di toccare le emozioni delle persone.
+                    </p>
+                    <p>
+                        Oggi aiuto brand e aziende a trovare la loro "melodia" unica nel rumoroso mondo digitale,
+                        creando campagne che non solo convertono, ma che restano nel cuore del pubblico.
+                    </p>
+                </div>
+
+                <div class="about-values">
+                    <h4>I Miei Valori</h4>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h5>Creatività</h5>
+                            <p>Ogni progetto è un'opportunità per innovare</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-heart"></i>
+                            <h5>Passione</h5>
+                            <p>Amo quello che faccio e si vede nei risultati</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-handshake"></i>
+                            <h5>Partnership</h5>
+                            <p>Lavoro con i clienti, non per i clienti</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h5>Risultati</h5>
+                            <p>La creatività deve sempre portare ROI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visual">
+                <div class="about-image">
+                    <img src="/images/jacopo-about.jpg" alt="Jacopo al lavoro" loading="lazy">
+                </div>
+
+                <div class="skills-detailed">
+                    <h4>Competenze Tecniche</h4>
+                    <div class="skill-category">
+                        <h5>Marketing & Strategy</h5>
+                        <div class="skill-list">
+                            <span class="skill-tag">Social Media Marketing</span>
+                            <span class="skill-tag">Content Strategy</span>
+                            <span class="skill-tag">Brand Identity</span>
+                            <span class="skill-tag">Digital Analytics</span>
+                            <span class="skill-tag">Influencer Marketing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h5>Music Production</h5>
+                        <div class="skill-list">
+                            <span class="skill-tag">Ableton Live</span>
+                            <span class="skill-tag">Logic Pro</span>
+                            <span class="skill-tag">Mixing & Mastering</span>
+                            <span class="skill-tag">Sound Design</span>
+                            <span class="skill-tag">Audio Branding</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h5>Design & Tools</h5>
+                        <div class="skill-list">
+                            <span class="skill-tag">Adobe Creative Suite</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Canva Pro</span>
+                            <span class="skill-tag">Video Editing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Parliamone</span>
+            <h2 class="section-title">
                 Pronto a creare qualcosa di <span class="highlight">straordinario</span>?
             </h2>
-            <p class="cta-description">
+            <p class="section-description">
                 Che si tratti di una campagna marketing innovativa o di una colonna sonora per il tuo brand,
                 trasformiamo le idee in realtà che fanno la differenza.
             </p>
-
-            <div class="cta-actions">
-                <a href="/contact" class="cta-btn cta-btn-primary">
-                    <span>Iniziamo a collaborare</span>
-                    <i class="fas fa-rocket"></i>
-                </a>
-
-                <a href="mailto:jacopo@example.com" class="cta-btn cta-btn-secondary">
-                    <span>Scrivimi una mail</span>
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
         </div>
 
-        <div class="cta-visual">
-            <div class="cta-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-handshake"></i>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-info">
+                            <h4>Email</h4>
+                            <p>jacopo@example.com</p>
+                            <span>Risposta entro 24 ore</span>
+                        </div>
                     </div>
-                    <div class="stat-content">
-                        <h4>Collaborazioni</h4>
-                        <p>Lavoriamo insieme per il successo</p>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="method-info">
+                            <h4>Telefono</h4>
+                            <p>+39 312 345 6789</p>
+                            <span>Lun-Ven 9:00-18:00</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="method-info">
+                            <h4>Ubicazione</h4>
+                            <p>Alba, Piemonte</p>
+                            <span>Disponibile anche da remoto</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h4>Risposta rapida</h4>
-                        <p>Ti rispondo entro 24 ore</p>
+                <div class="social-links">
+                    <h4>Seguimi Online</h4>
+                    <div class="social-grid">
+                        <a href="https://open.spotify.com/artist/your-id" class="social-link" target="_blank">
+                            <i class="fab fa-spotify"></i>
+                            <span>Spotify</span>
+                        </a>
+                        <a href="https://instagram.com/jacopo" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://linkedin.com/in/jacopo" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://youtube.com/jacopo" class="social-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-form-container">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="stat-content">
-                        <h4>Base ad Alba</h4>
-                        <p>Ma lavoro con tutto il mondo</p>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label for="company">Azienda</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Servizio di interesse</label>
+                        <select id="service" name="service">
+                            <option value="">Seleziona un servizio</option>
+                            <option value="marketing">Marketing Strategy</option>
+                            <option value="social">Social Media Management</option>
+                            <option value="content">Content Creation</option>
+                            <option value="music">Music Production</option>
+                            <option value="branding">Brand Identity</option>
+                            <option value="other">Altro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget indicativo</label>
+                        <select id="budget" name="budget">
+                            <option value="">Seleziona un range</option>
+                            <option value="1000-5000">€1.000 - €5.000</option>
+                            <option value="5000-10000">€5.000 - €10.000</option>
+                            <option value="10000-25000">€10.000 - €25.000</option>
+                            <option value="25000+">€25.000+</option>
+                            <option value="discuss">Da discutere</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Messaggio *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Raccontami del tuo progetto..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy" required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">
+                                Accetto la <a href="/privacy" target="_blank">Privacy Policy</a> e
+                                i <a href="/terms" target="_blank">Termini di Servizio</a> *
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">
+                                Voglio ricevere aggiornamenti sui nuovi progetti e le uscite musicali
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Invia Messaggio</span>
+                        <i class="fas fa-paper-plane"></i>
+                        <div class="btn-loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -428,6 +670,179 @@
 <script src="/js/ScrollTrigger.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/home.js"></script>
+
+<script>
+// Single Page Application functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('a[data-section]');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetSection = this.getAttribute('data-section');
+            const targetElement = document.getElementById(targetSection);
+
+            if (targetElement) {
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu-overlay');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+
+                // Smooth scroll to section
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Update active nav link
+                updateActiveNavLink(targetSection);
+            }
+        });
+    });
+
+    // Update active nav link based on scroll position
+    function updateActiveNavLink(activeSection = null) {
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+
+            if (activeSection && link.getAttribute('data-section') === activeSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Intersection Observer for automatic nav highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateActiveNavLink(entry.target.id);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Portfolio filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            // Filter items with animation
+            portfolioItems.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = 'block';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.3s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-20px)';
+
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'block';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Reset button state
+                btnText.style.display = 'block';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+
+                // Show success message
+                alert('Messaggio inviato con successo! Ti risponderò al più presto.');
+
+                // Reset form
+                this.reset();
+            }, 2000);
+        });
+    }
+
+    // Project modal function (to be called from project buttons)
+    window.openProjectModal = function(projectId) {
+        // This would open a modal with project details
+        // For now, just scroll to portfolio section
+        const portfolioSection = document.getElementById('portfolio');
+        if (portfolioSection) {
+            portfolioSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
+    // Add scroll-based animations
+    if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate sections on scroll
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.fromTo(section,
+                {
+                    opacity: 0,
+                    y: 50
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+    }
+});
+</script>
 
 </body>
 </html>
