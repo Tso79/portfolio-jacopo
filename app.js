@@ -24,18 +24,44 @@ const portfolioData = {
     projects: [
         {
             id: 1,
-            title: "Campagna Social Media",
-            description: "Strategia di comunicazione per brand emergente",
-            image: "/images/project1.jpg",
-            video: "/videos/project1.mp4",
-            category: "Social Media"
+            title: "DJ Music Producer",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+            image: "/images/portfolio/illustrazione-di-dj-di-cartoni-animati-3d.jpg",
+            category: "Musical"
         },
         {
             id: 2,
-            title: "Brand Identity",
-            description: "Sviluppo identità visiva completa",
-            image: "/images/project2.jpg",
-            video: "/videos/project2.mp4",
+            title: "Party DJ Controller",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud.",
+            image: "/images/portfolio/personaggio-di-cartone-animato-3d-che-fa-il-dj-alla-festa.jpg",
+            category: "Musical"
+        },
+        {
+            id: 3,
+            title: "Urban Style Project",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+            image: "/images/portfolio/cane-stile-futuristico-natura.jpg",
+            category: "Musical"
+        },
+        {
+            id: 4,
+            title: "Wild Character Design",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
+            image: "/images/portfolio/personaggio-dei-cartoni-animati-di-opossum-selvatico.jpg",
+            category: "Musical"
+        },
+        {
+            id: 5,
+            title: "Fashion Style Project",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste.",
+            image: "/images/portfolio/veduta-di-un-cane-con-un-abito-divertente.jpg",
+            category: "Musical"
+        },
+        {
+            id: 6,
+            title: "Urban Lion Design",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia.",
+            image: "/images/portfolio/leone-carino-citta.jpg",
             category: "Branding"
         }
     ]

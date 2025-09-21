@@ -1,0 +1,19 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg4)"/>
+  <circle cx="200" cy="120" r="40" fill="#fbbf24"/>
+  <circle cx="185" cy="110" r="3" fill="#1f2937"/>
+  <circle cx="215" cy="110" r="3" fill="#1f2937"/>
+  <path d="M 190 125 Q 200 135 210 125" stroke="#1f2937" stroke-width="2" fill="none"/>
+  <polygon points="180,80 220,80 210,60 190,60" fill="#f59e0b"/>
+  <rect x="190" y="160" width="20" height="40" fill="#8b5cf6"/>
+  <ellipse cx="230" cy="180" rx="15" ry="25" fill="#92400e"/>
+  <rect x="205" y="175" width="30" height="3" fill="#374151"/>
+  <rect x="225" y="190" width="25" height="3" fill="#6b7280"/>
+  <text x="200" y="270" text-anchor="middle" fill="white" font-size="20" font-family="Arial">🎻 VIOLIN GNOME</text>
+</svg>
