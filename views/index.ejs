@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacopo - Marketing & Music Creator</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio di Jacopo - Marketing Specialist e Music Producer da Asti. Strategie innovative e creatività musicale.">
+    <meta name="keywords" content="marketing, music, portfolio, asti, piemonte, spotify, content creator">
+    <meta name="author" content="Jacopo">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jacopo - Marketing & Music Creator">
+    <meta property="og:description" content="Portfolio professionale di Jacopo - Marketing e Musica">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body class="home-page">
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="loader">
+        <div class="loader-text">
+            <span class="letter">J</span>
+            <span class="letter">A</span>
+            <span class="letter">C</span>
+            <span class="letter">O</span>
+            <span class="letter">P</span>
+            <span class="letter">O</span>
+        </div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<%- include('partials/nav', { currentPage: 'home' }) %>
+
+<!-- Main Content -->
+<main id="main-content">
+
+<!-- Hero Section -->
+<section class="hero-section" id="hero">
+    <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+    </div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Hero Text -->
+            <div class="hero-text">
+                <div class="hero-greeting">
+                    <span class="greeting-text">Ciao, sono</span>
+                    <div class="greeting-wave">👋</div>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="title-word" data-text="JACOPO">JACOPO</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-highlight">MARKETING</span>
+                        <span class="title-ampersand">&</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-music">MUSIC</span>
+                        <span class="title-creator">CREATOR</span>
+                    </span>
+                </h1>
+
+                <div class="hero-subtitle">
+                    <div class="typewriter" id="typewriter">
+                        <span class="typewriter-text"></span>
+                        <span class="typewriter-cursor">|</span>
+                    </div>
+                </div>
+
+                <p class="hero-description">
+                    Da Asti al mondo digitale, creo strategie di marketing che fanno <em>rumore</em>
+                    e produco musica che racconta storie. Due passioni, infinite possibilità.
+                </p>
+            </div>
+
+            <!-- Hero Actions -->
+            <div class="hero-actions">
+                <a href="/portfolio" class="hero-btn hero-btn-primary">
+                    <span class="btn-text">Scopri i Progetti</span>
+                    <div class="btn-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="btn-glow"></div>
+                </a>
+
+                <a href="/music" class="hero-btn hero-btn-secondary">
+                    <span class="btn-text">Ascolta la Musica</span>
+                    <div class="btn-icon">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="hero-social-proof">
+                <div class="social-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="25">0</div>
+                        <div class="stat-label">Progetti Completati</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="12">0</div>
+                        <div class="stat-label">Brani su Spotify</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-label">% Soddisfazione</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <div class="hero-image-wrapper">
+                    <img src="/images/jacopo-hero.jpg" alt="Jacopo" class="hero-image" loading="lazy">
+                    <div class="image-overlay"></div>
+                </div>
+
+                <!-- Floating Elements -->
+                <div class="floating-element floating-music">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="floating-element floating-chart">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="floating-element floating-lightbulb">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-text">Scroll to explore</div>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="about-preview-section" id="about-preview">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Chi Sono</span>
+            <h2 class="section-title">
+                Creatività che <span class="highlight">Connette</span>
+            </h2>
+        </div>
+
+        <div class="about-preview-content">
+            <div class="about-text">
+                <p class="about-description">
+                    Sono un giovane creativo di Asti con una doppia anima: strategist del marketing digitale
+                    di giorno e producer musicale di notte. Credo che ogni brand abbia una sua melodia
+                    unica da far sentire al mondo.
+                </p>
+
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Marketing Strategico</h4>
+                            <p>Campagne che convertono e coinvolgono</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Produzione Musicale</h4>
+                            <p>Suoni che emozionano e ispirano</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/about" class="about-cta">
+                    <span>Scopri di più</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="about-visual">
+                <div class="skills-preview">
+                    <h4>Skills principali</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">Marketing Strategy</span>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-skill="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Social Media</span>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-skill="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Music Production</span>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-skill="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Content Creation</span>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-skill="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="featured-projects-section" id="featured-projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">
+                Progetti che <span class="highlight">Ispirano</span>
+            </h2>
+        </div>
+
+        <div class="projects-grid">
+            <% data.projects.slice(0, 3).forEach((project, index) => { %>
+                <article class="project-card" data-index="<%= index %>">
+                    <div class="project-image">
+                        <img src="<%= project.image %>" alt="<%= project.title %>" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-category"><%= project.category %></div>
+                            <div class="project-actions">
+                                <a href="/project/<%= project.id %>" class="project-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <% if (project.video) { %>
+                                    <button class="project-btn play-video" data-video="<%= project.video %>">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <h3 class="project-title"><%= project.title %></h3>
+                        <p class="project-description"><%= project.description %></p>
+
+                        <div class="project-footer">
+                            <span class="project-year">2024</span>
+                            <a href="/project/<%= project.id %>" class="project-link">
+                                <span>Vedi progetto</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
+
+        <div class="section-footer">
+            <a href="/portfolio" class="view-all-btn">
+                <span>Vedi tutti i progetti</span>
+                <div class="btn-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Music Preview Section -->
+<section class="music-preview-section" id="music-preview">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">La Mia Musica</span>
+            <h2 class="section-title">
+                Suoni da <span class="highlight">Asti</span>
+            </h2>
+        </div>
+
+        <div class="music-player-container">
+            <div class="music-visual">
+                <div class="vinyl-record">
+                    <div class="vinyl-center"></div>
+                    <div class="vinyl-grooves"></div>
+                </div>
+                <div class="music-waves">
+                    <div class="wave" style="--i: 1"></div>
+                    <div class="wave" style="--i: 2"></div>
+                    <div class="wave" style="--i: 3"></div>
+                    <div class="wave" style="--i: 4"></div>
+                    <div class="wave" style="--i: 5"></div>
+                </div>
+            </div>
+
+            <div class="music-content">
+                <h3>Latest Track</h3>
+                <h4>"Notte di Stelle" (2024)</h4>
+                <p>Il mio ultimo singolo, ispirato dalle notti d'estate nelle colline astigiane.</p>
+
+                <div class="music-actions">
+                    <button class="play-btn" id="play-btn">
+                        <i class="fas fa-play"></i>
+                        <span>Play</span>
+                    </button>
+
+                    <a href="https://open.spotify.com/artist/your-id" class="spotify-btn" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                        <span>Ascolta su Spotify</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">
+                Pronto a creare qualcosa di <span class="highlight">straordinario</span>?
+            </h2>
+            <p class="cta-description">
+                Che si tratti di una campagna marketing innovativa o di una colonna sonora per il tuo brand,
+                trasformiamo le idee in realtà che fanno la differenza.
+            </p>
+
+            <div class="cta-actions">
+                <a href="/contact" class="cta-btn cta-btn-primary">
+                    <span>Iniziamo a collaborare</span>
+                    <i class="fas fa-rocket"></i>
+                </a>
+
+                <a href="mailto:jacopo@example.com" class="cta-btn cta-btn-secondary">
+                    <span>Scrivimi una mail</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="cta-visual">
+            <div class="cta-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Collaborazioni</h4>
+                        <p>Lavoriamo insieme per il successo</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Risposta rapida</h4>
+                        <p>Ti rispondo entro 24 ore</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Base ad Asti</h4>
+                        <p>Ma lavoro con tutto il mondo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</main>
+
+<!-- Footer -->
+<%- include('partials/footer') %>
+
+<!-- Cursor Custom -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Scripts -->
+<script src="/js/gsap.min.js"></script>
+<script src="/js/ScrollTrigger.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/home.js"></script>
+
+</body>
+</html>
