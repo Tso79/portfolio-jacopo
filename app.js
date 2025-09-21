@@ -11,6 +11,10 @@ app.set('views', path.join(__dirname, 'views'));
 // Middleware per file statici
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Middleware per parsing JSON
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Dati del portfolio (per ora mock, poi si può spostare in JSON)
 const portfolioData = {
     name: "Jacopo",
@@ -42,20 +46,25 @@ app.get('/', (req, res) => {
     res.render('index', { data: portfolioData });
 });
 
-app.get('/portfolio', (req, res) => {
-    res.render('portfolio', { data: portfolioData });
+// API endpoint for form submission
+app.post('/api/contact', (req, res) => {
+    // TODO: Handle contact form submission
+    console.log('Contact form submission:', req.body);
+    res.json({ success: true, message: 'Messaggio ricevuto con successo!' });
 });
 
-app.get('/project/:id', (req, res) => {
+// API endpoint for project details (for future modal implementation)
+app.get('/api/project/:id', (req, res) => {
     const project = portfolioData.projects.find(p => p.id == req.params.id);
     if (!project) {
-        return res.status(404).render('404');
+        return res.status(404).json({ error: 'Progetto non trovato' });
     }
-    res.render('project', { project, data: portfolioData });
+    res.json({ project });
 });
 
-app.get('/contact', (req, res) => {
-    res.render('contact', { data: portfolioData });
+// Catch all route - redirect to home for SPA
+app.get('*', (req, res) => {
+    res.redirect('/');
 });
 
 // 404 handler
