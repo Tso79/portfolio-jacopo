@@ -181,9 +181,9 @@
         <div class="about-preview-content">
             <div class="about-text">
                 <p class="about-description">
-                    Sono un giovane creativo di Alba con una doppia anima: strategist del marketing digitale
-                    di giorno e producer musicale di notte. Credo che ogni brand abbia una sua melodia
-                    unica da far sentire al mondo.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
 
                 <div class="about-highlights">
@@ -193,7 +193,7 @@
                         </div>
                         <div class="highlight-text">
                             <h4>Marketing Strategico</h4>
-                            <p>Campagne che convertono e coinvolgono</p>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
                         </div>
                     </div>
 
@@ -203,12 +203,12 @@
                         </div>
                         <div class="highlight-text">
                             <h4>Produzione Musicale</h4>
-                            <p>Suoni che emozionano e ispirano</p>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
                         </div>
                     </div>
                 </div>
 
-                <a href="/about" class="about-cta">
+                <a href="#about" class="about-cta" data-section="about">
                     <span>Scopri di più</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -259,44 +259,32 @@
             </h2>
         </div>
 
-        <div class="projects-grid">
+        <div class="portfolio-grid">
             <% data.projects.slice(0, 3).forEach((project, index) => { %>
-                <article class="project-card" data-index="<%= index %>">
+                <article class="portfolio-item" data-category="<%= project.category.toLowerCase() %>">
                     <div class="project-image">
                         <img src="<%= project.image %>" alt="<%= project.title %>" loading="lazy">
                         <div class="project-overlay">
-                            <div class="project-category"><%= project.category %></div>
-                            <div class="project-actions">
-                                <a href="/project/<%= project.id %>" class="project-btn">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <% if (project.video) { %>
-                                    <button class="project-btn play-video" data-video="<%= project.video %>">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                <% } %>
+                            <div class="project-info">
+                                <h3><%= project.title %></h3>
+                                <p><%= project.description %></p>
+                                <button class="view-project-btn" onclick="openProjectModal('<%= project.id %>')">
+                                    Vedi Progetto
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <div class="project-content">
-                        <h3 class="project-title"><%= project.title %></h3>
-                        <p class="project-description"><%= project.description %></p>
-
-                        <div class="project-footer">
-                            <span class="project-year">2024</span>
-                            <a href="/project/<%= project.id %>" class="project-link">
-                                <span>Vedi progetto</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="project-meta">
+                        <span class="project-category"><%= project.category %></span>
+                        <span class="project-year">2024</span>
                     </div>
                 </article>
             <% }); %>
         </div>
 
         <div class="section-footer">
-            <a href="/portfolio" class="view-all-btn">
+            <a href="#portfolio" class="view-all-btn" data-section="portfolio">
                 <span>Vedi tutti i progetti</span>
                 <div class="btn-arrow">
                     <i class="fas fa-arrow-right"></i>
@@ -410,22 +398,23 @@
                 <div class="about-intro">
                     <h3>Ciao, sono Jacopo</h3>
                     <p class="lead">
-                        Un creativo digitale di Alba che vive tra due mondi: il marketing strategico di giorno
-                        e la produzione musicale di notte. La mia missione è dare voce ai brand attraverso
-                        strategie innovative e suoni che emozionano.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.
                     </p>
                 </div>
 
                 <div class="about-story">
                     <h4>Il Mio Percorso</h4>
                     <p>
-                        Tutto è iniziato con una passione per la comunicazione e un amore profondo per la musica.
-                        Ho scoperto che questi due mondi, apparentemente diversi, condividono un linguaggio comune:
-                        l'abilità di toccare le emozioni delle persone.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
                     <p>
-                        Oggi aiuto brand e aziende a trovare la loro "melodia" unica nel rumoroso mondo digitale,
-                        creando campagne che non solo convertono, ma che restano nel cuore del pubblico.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum sed ut perspiciatis unde omnis.
                     </p>
                 </div>
 
@@ -821,271 +810,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<style>
-/* Contact CTA Cards */
-.contact-cta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.cta-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.cta-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.cta-card h4 {
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.cta-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.cta-button.primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
-}
-
-.cta-button.primary:hover {
-    background: linear-gradient(135deg, #5855f7, #7c3aed);
-    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
-}
-
-.cta-button.secondary {
-    background: #25D366;
-    color: white;
-}
-
-.cta-button.secondary:hover {
-    background: #22C55E;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-}
-
-.cta-button.tertiary {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.cta-button.tertiary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .contact-cta {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .cta-card {
-        padding: 1.5rem;
-    }
-
-    .cta-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.25rem;
-    }
-}
-
-/* Music Note Back to Top Button */
-.back-to-top-music {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24, #fd79a8);
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(100px);
-    opacity: 0;
-    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.back-to-top-music.visible {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.back-to-top-music:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
-    background: linear-gradient(135deg, #fd79a8, #fdcb6e, #6c5ce7);
-}
-
-.music-note {
-    color: white;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.back-to-top-music:hover .music-note {
-    transform: rotate(15deg) scale(1.1);
-}
-
-/* Playing animation */
-.back-to-top-music.playing {
-    animation: musicBounce 0.8s ease-in-out;
-}
-
-.back-to-top-music.playing .music-note {
-    animation: noteFloat 0.8s ease-in-out;
-}
-
-@keyframes musicBounce {
-    0%, 100% {
-        transform: translateY(-5px) scale(1.1);
-        background: linear-gradient(135deg, #fd79a8, #fdcb6e, #6c5ce7);
-    }
-    25% {
-        transform: translateY(-10px) scale(1.2) rotate(10deg);
-        background: linear-gradient(135deg, #00cec9, #0984e3, #a29bfe);
-        box-shadow: 0 20px 50px rgba(0, 206, 201, 0.6);
-    }
-    50% {
-        transform: translateY(-8px) scale(1.15) rotate(-5deg);
-        background: linear-gradient(135deg, #fd79a8, #e84393, #6c5ce7);
-        box-shadow: 0 25px 60px rgba(253, 121, 168, 0.7);
-    }
-    75% {
-        transform: translateY(-12px) scale(1.25) rotate(8deg);
-        background: linear-gradient(135deg, #fdcb6e, #e17055, #d63031);
-        box-shadow: 0 30px 70px rgba(253, 203, 110, 0.8);
-    }
-}
-
-@keyframes noteFloat {
-    0%, 100% {
-        transform: rotate(15deg) scale(1.1);
-        color: white;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-    25% {
-        transform: rotate(25deg) scale(1.3);
-        color: #00cec9;
-        text-shadow: 0 4px 15px rgba(0, 206, 201, 0.5);
-    }
-    50% {
-        transform: rotate(-10deg) scale(1.2);
-        color: #fd79a8;
-        text-shadow: 0 6px 20px rgba(253, 121, 168, 0.6);
-    }
-    75% {
-        transform: rotate(30deg) scale(1.4);
-        color: #fdcb6e;
-        text-shadow: 0 8px 25px rgba(253, 203, 110, 0.7);
-    }
-}
-
-/* Idle floating animation */
-.back-to-top-music.visible:not(.playing) {
-    animation: musicFloat 4s ease-in-out infinite;
-}
-
-.back-to-top-music.visible:not(.playing) .music-note {
-    animation: notePulse 2s ease-in-out infinite;
-}
-
-@keyframes musicFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-@keyframes notePulse {
-    0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
-    }
-    50% {
-        transform: scale(1.05);
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-    }
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .back-to-top-music {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        width: 55px;
-        height: 55px;
-    }
-
-    .music-note {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .back-to-top-music {
-        bottom: 1rem;
-        right: 1rem;
-        width: 50px;
-        height: 50px;
-    }
-
-    .music-note {
-        font-size: 1.2rem;
-    }
-}
-</style>
 
 </body>
 </html>
